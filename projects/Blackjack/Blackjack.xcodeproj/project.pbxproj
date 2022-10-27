@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4A9C1A42909849E00A9CDA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1A32909849E00A9CDA0 /* AppDelegate.swift */; };
+		C4A9C1A62909849E00A9CDA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1A52909849E00A9CDA0 /* SceneDelegate.swift */; };
+		C4A9C1A82909849E00A9CDA0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1A72909849E00A9CDA0 /* GameViewController.swift */; };
+		C4A9C1AB2909849E00A9CDA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A9C1A92909849E00A9CDA0 /* Main.storyboard */; };
+		C4A9C1AD290984A200A9CDA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A9C1AC290984A200A9CDA0 /* Assets.xcassets */; };
+		C4A9C1B0290984A200A9CDA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A9C1AE290984A200A9CDA0 /* LaunchScreen.storyboard */; };
+		C4A9C1B9290984E100A9CDA0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1B8290984E100A9CDA0 /* Card.swift */; };
+		C4A9C1BB2909879D00A9CDA0 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1BA2909879D00A9CDA0 /* Deck.swift */; };
+		C4A9C1BD290989CF00A9CDA0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1BC290989CF00A9CDA0 /* Player.swift */; };
+		C4A9C1BF290A6B3C00A9CDA0 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1BE290A6B3C00A9CDA0 /* Dealer.swift */; };
+		C4A9C1C1290A7BF100A9CDA0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1C0290A7BF100A9CDA0 /* Game.swift */; };
+		C4A9C1C3290B0FF100A9CDA0 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A9C1C2290B0FF100A9CDA0 /* CardCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C4A9C1A02909849E00A9CDA0 /* Blackjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blackjack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A9C1A32909849E00A9CDA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C4A9C1A52909849E00A9CDA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C4A9C1A72909849E00A9CDA0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C4A9C1AA2909849E00A9CDA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C4A9C1AC290984A200A9CDA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4A9C1AF290984A200A9CDA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C4A9C1B1290984A200A9CDA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A9C1B8290984E100A9CDA0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		C4A9C1BA2909879D00A9CDA0 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		C4A9C1BC290989CF00A9CDA0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C4A9C1BE290A6B3C00A9CDA0 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
+		C4A9C1C0290A7BF100A9CDA0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		C4A9C1C2290B0FF100A9CDA0 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4A9C19D2909849E00A9CDA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4A9C1972909849D00A9CDA0 = {
+			isa = PBXGroup;
+			children = (
+				C4A9C1A22909849E00A9CDA0 /* Blackjack */,
+				C4A9C1A12909849E00A9CDA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4A9C1A12909849E00A9CDA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4A9C1A02909849E00A9CDA0 /* Blackjack.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4A9C1A22909849E00A9CDA0 /* Blackjack */ = {
+			isa = PBXGroup;
+			children = (
+				C4A9C1B7290984CA00A9CDA0 /* Models */,
+				C4A9C1A32909849E00A9CDA0 /* AppDelegate.swift */,
+				C4A9C1A52909849E00A9CDA0 /* SceneDelegate.swift */,
+				C4A9C1A72909849E00A9CDA0 /* GameViewController.swift */,
+				C4A9C1A92909849E00A9CDA0 /* Main.storyboard */,
+				C4A9C1AC290984A200A9CDA0 /* Assets.xcassets */,
+				C4A9C1AE290984A200A9CDA0 /* LaunchScreen.storyboard */,
+				C4A9C1B1290984A200A9CDA0 /* Info.plist */,
+				C4A9C1C2290B0FF100A9CDA0 /* CardCell.swift */,
+			);
+			path = Blackjack;
+			sourceTree = "<group>";
+		};
+		C4A9C1B7290984CA00A9CDA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4A9C1B8290984E100A9CDA0 /* Card.swift */,
+				C4A9C1BC290989CF00A9CDA0 /* Player.swift */,
+				C4A9C1BE290A6B3C00A9CDA0 /* Dealer.swift */,
+				C4A9C1BA2909879D00A9CDA0 /* Deck.swift */,
+				C4A9C1C0290A7BF100A9CDA0 /* Game.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4A9C19F2909849E00A9CDA0 /* Blackjack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4A9C1B4290984A200A9CDA0 /* Build configuration list for PBXNativeTarget "Blackjack" */;
+			buildPhases = (
+				C4A9C19C2909849E00A9CDA0 /* Sources */,
+				C4A9C19D2909849E00A9CDA0 /* Frameworks */,
+				C4A9C19E2909849E00A9CDA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blackjack;
+			productName = Blackjack;
+			productReference = C4A9C1A02909849E00A9CDA0 /* Blackjack.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4A9C1982909849D00A9CDA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					C4A9C19F2909849E00A9CDA0 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = C4A9C19B2909849D00A9CDA0 /* Build configuration list for PBXProject "Blackjack" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4A9C1972909849D00A9CDA0;
+			productRefGroup = C4A9C1A12909849E00A9CDA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4A9C19F2909849E00A9CDA0 /* Blackjack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4A9C19E2909849E00A9CDA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A9C1B0290984A200A9CDA0 /* LaunchScreen.storyboard in Resources */,
+				C4A9C1AD290984A200A9CDA0 /* Assets.xcassets in Resources */,
+				C4A9C1AB2909849E00A9CDA0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4A9C19C2909849E00A9CDA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A9C1A82909849E00A9CDA0 /* GameViewController.swift in Sources */,
+				C4A9C1A42909849E00A9CDA0 /* AppDelegate.swift in Sources */,
+				C4A9C1BF290A6B3C00A9CDA0 /* Dealer.swift in Sources */,
+				C4A9C1BB2909879D00A9CDA0 /* Deck.swift in Sources */,
+				C4A9C1A62909849E00A9CDA0 /* SceneDelegate.swift in Sources */,
+				C4A9C1BD290989CF00A9CDA0 /* Player.swift in Sources */,
+				C4A9C1B9290984E100A9CDA0 /* Card.swift in Sources */,
+				C4A9C1C1290A7BF100A9CDA0 /* Game.swift in Sources */,
+				C4A9C1C3290B0FF100A9CDA0 /* CardCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C4A9C1A92909849E00A9CDA0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4A9C1AA2909849E00A9CDA0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C4A9C1AE290984A200A9CDA0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4A9C1AF290984A200A9CDA0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4A9C1B2290984A200A9CDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C4A9C1B3290984A200A9CDA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4A9C1B5290984A200A9CDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6QUJ8B44C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Blackjack/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vladislavs.poznaks.Blackjack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4A9C1B6290984A200A9CDA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6QUJ8B44C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Blackjack/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vladislavs.poznaks.Blackjack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4A9C19B2909849D00A9CDA0 /* Build configuration list for PBXProject "Blackjack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A9C1B2290984A200A9CDA0 /* Debug */,
+				C4A9C1B3290984A200A9CDA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4A9C1B4290984A200A9CDA0 /* Build configuration list for PBXNativeTarget "Blackjack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A9C1B5290984A200A9CDA0 /* Debug */,
+				C4A9C1B6290984A200A9CDA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4A9C1982909849D00A9CDA0 /* Project object */;
+}
