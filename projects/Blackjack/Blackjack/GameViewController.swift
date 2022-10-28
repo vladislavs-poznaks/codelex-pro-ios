@@ -11,36 +11,6 @@ class GameViewController: UIViewController {
     
     private let game = Game()
     
-    private var playerLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Player hand"
-        
-        return label
-    }()
-    
-    private var playerHandLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private var dealerLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Dealer hand"
-        
-        return label
-    }()
-    
-    private var dealerHandLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
     private var resultLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -92,6 +62,11 @@ class GameViewController: UIViewController {
         collectionViewLayout: UICollectionViewFlowLayout()
     )
     
+    private let dealerHandCollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -101,8 +76,12 @@ class GameViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        	
+        let playerHandBounds = CGRect(x: 0, y: 300, width: view.bounds.width, height: 150)
+        playerHandCollectionView.frame = playerHandBounds
         
-        playerHandCollectionView.frame = view.bounds
+        let dealerHandBounds = CGRect(x: 0, y: 150, width: view.bounds.width, height: 150)
+        dealerHandCollectionView.frame = dealerHandBounds
     }
     
     func refresh() {
@@ -113,10 +92,8 @@ class GameViewController: UIViewController {
             
             resultLabel.text = game.getResult()
         }
-        
-        dealerHandLabel.text = game.getDealer().getHandNames().joined(separator: " | ")
-        playerHandLabel.text = game.getPlayer().getHandNames().joined(separator: " | ")
     
+        dealerHandCollectionView.reloadData()
         playerHandCollectionView.reloadData()
         
         hitButton.isEnabled = game.getPlayer().isPlaying()
@@ -133,18 +110,17 @@ class GameViewController: UIViewController {
 
     func setupView() {
         
+        dealerHandCollectionView.delegate = self
+        dealerHandCollectionView.dataSource = self
+        
         playerHandCollectionView.delegate = self
         playerHandCollectionView.dataSource = self
         
+        dealerHandCollectionView.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
         playerHandCollectionView.register(CardCell.self, forCellWithReuseIdentifier: CardCell.identifier)
         
-//        view.addSubview(playerHandCollectionView)
-        
-        view.addSubview(dealerLabel)
-        view.addSubview(dealerHandLabel)
-        
-        view.addSubview(playerLabel)
-        view.addSubview(playerHandLabel)
+        view.addSubview(dealerHandCollectionView)
+        view.addSubview(playerHandCollectionView)
         
         view.addSubview(hitButton)
         view.addSubview(standButton)
@@ -153,21 +129,6 @@ class GameViewController: UIViewController {
         view.addSubview(resetButton)
         
         NSLayoutConstraint.activate([
-//            playerHandCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            playerHandCollectionView.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -500),
-            
-            dealerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            dealerLabel.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            
-            dealerHandLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            dealerHandLabel.centerYAnchor.constraint(equalTo: dealerLabel.bottomAnchor, constant: 25),
-            
-            playerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            playerLabel.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            
-            playerHandLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            playerHandLabel.centerYAnchor.constraint(equalTo: playerLabel.bottomAnchor, constant: 25),
-            
             hitButton.widthAnchor.constraint(equalToConstant: 150),
             hitButton.heightAnchor.constraint(equalToConstant: 50),
             
@@ -178,16 +139,16 @@ class GameViewController: UIViewController {
             resetButton.heightAnchor.constraint(equalToConstant: 50),
             
             hitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -90),
-            hitButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 300),
+            hitButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             
             standButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 90),
-            standButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 300),
-            
-            resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            resultLabel.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 300),
+            standButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             
             resetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            resetButton.centerYAnchor.constraint(equalTo: view.topAnchor, constant: 400),
+            resetButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            
+            resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            resultLabel.centerYAnchor.constraint(equalTo: resetButton.topAnchor, constant: -50),
         ])
     }
     
@@ -216,9 +177,17 @@ class GameViewController: UIViewController {
 extension GameViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             // (view.frame.size.width / 3) - 3 <- subtrack by 3 it means for padding 1 between cells
-        let count = CGFloat(game.getPlayer().getHand().count)
-                
-        return CGSize(width: (view.frame.size.width / count) - 3, height: (view.frame.size.width / count) - 3)
+            var count: CGFloat = 1
+        
+            if (collectionView == playerHandCollectionView) {
+                count = CGFloat(game.getPlayer().getHand().count)
+            }
+            
+            if (collectionView == dealerHandCollectionView) {
+                count = CGFloat(game.getDealer().getHand().count)
+            }
+                    
+            return CGSize(width: (view.frame.size.width / count) - 3, height: (view.frame.size.width / count) - 3)
         }
         
         // 3 items in the row so 1 * 3 for each cell
@@ -233,7 +202,7 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
         
         // Space between rows
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            3
+            return 3
         }
 }
 
@@ -243,12 +212,31 @@ extension GameViewController: UICollectionViewDelegate {
 
 extension GameViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.game.getPlayer().getHand().count
+        if collectionView == dealerHandCollectionView {
+            return self.game.getDealer().getHand().count
+        }
+        if collectionView == playerHandCollectionView {
+            return self.game.getPlayer().getHand().count
+        }
+        
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = playerHandCollectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as? CardCell {
-            cell.configure(cardImage: game.getPlayer().getHand()[indexPath.row].getName())
+        if collectionView == dealerHandCollectionView, let cell = dealerHandCollectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as? CardCell {
+            var imageName: String = game.getDealer().getHandNames()[indexPath.row]
+            
+            if indexPath.row == 0, game.getPlayer().isPlaying() {
+                imageName = "00"
+            }
+
+            cell.configure(cardImage: imageName)
+            
+            return cell
+        }
+        
+        if collectionView == playerHandCollectionView, let cell = playerHandCollectionView.dequeueReusableCell(withReuseIdentifier: CardCell.identifier, for: indexPath) as? CardCell {
+            cell.configure(cardImage: game.getPlayer().getHandNames()[indexPath.row])
             
             return cell
         }
