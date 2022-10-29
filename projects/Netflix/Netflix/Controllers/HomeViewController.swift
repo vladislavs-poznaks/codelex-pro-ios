@@ -9,6 +9,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private let sectionTtitles: [String] = [
+        "Trending Movies",
+        "Trending TVs",
+        "Popular",
+        "Top rated",
+        "Upcoming",
+    ]
+    
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
@@ -63,7 +71,7 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 20
+        return sectionTtitles.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,6 +92,23 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else {return}
+        
+        header.textLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
+        header.textLabel?.textColor = .white
+        header.textLabel?.frame = CGRect(
+            x: header.bounds.origin.x + 20,
+            y: header.bounds.origin.y,
+            width: 100,
+            height: header.bounds.height
+        )
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTtitles[section]
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
