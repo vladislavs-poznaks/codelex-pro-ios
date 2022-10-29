@@ -77,10 +77,10 @@ class GameViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         	
-        let playerHandBounds = CGRect(x: 0, y: 300, width: view.bounds.width, height: 150)
+        let playerHandBounds = CGRect(x: 0, y: 300, width: view.bounds.width, height: 100)
         playerHandCollectionView.frame = playerHandBounds
         
-        let dealerHandBounds = CGRect(x: 0, y: 150, width: view.bounds.width, height: 150)
+        let dealerHandBounds = CGRect(x: 0, y: 150, width: view.bounds.width, height: 100)
         dealerHandCollectionView.frame = dealerHandBounds
     }
     
@@ -109,6 +109,7 @@ class GameViewController: UIViewController {
     }
 
     func setupView() {
+        view.backgroundColor = .lightGray
         
         dealerHandCollectionView.delegate = self
         dealerHandCollectionView.dataSource = self
@@ -183,26 +184,26 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
                 count = CGFloat(game.getPlayer().getHand().count)
             }
             
-            if (collectionView == dealerHandCollectionView) {
+            if (collectionView == dealerHandCollectionView) {	
                 count = CGFloat(game.getDealer().getHand().count)
             }
-                    
-            return CGSize(width: (view.frame.size.width / count) - 3, height: (view.frame.size.width / count) - 3)
+                    	
+            return CGSize(width: (view.frame.size.width / count) - count, height: collectionView.frame.size.height)
         }
         
         // 3 items in the row so 1 * 3 for each cell
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-            return 1
+            return 0
         }
         
         // Padding of the whole collection view
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+            UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
         
         // Space between rows
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            return 3
+            return 0
         }
 }
 

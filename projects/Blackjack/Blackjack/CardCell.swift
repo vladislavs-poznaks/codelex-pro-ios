@@ -33,6 +33,7 @@ class CardCell: UICollectionViewCell {
         let bounds = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: 100)
         
         cardImageView.frame = bounds
+        cardImageView.backgroundColor = .green
     }
         
     override func prepareForReuse() {

@@ -20,7 +20,7 @@ class EmojiCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        contentView.backgroundColor = .lightGray
+        contentView.backgroundColor = .lightGray
         contentView.addSubview(emojiLabel)
         
         NSLayoutConstraint.activate([
