@@ -184,7 +184,7 @@ extension GameViewController: UICollectionViewDelegateFlowLayout {
                 count = CGFloat(game.getPlayer().getHand().count)
             }
             
-            if (collectionView == dealerHandCollectionView) {	
+            if (collectionView == dealerHandCollectionView) {
                 count = CGFloat(game.getDealer().getHand().count)
             }
                     	
