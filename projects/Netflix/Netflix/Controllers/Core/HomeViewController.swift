@@ -17,6 +17,10 @@ enum Sections: Int {
 
 class HomeViewController: UIViewController {
     
+    private var randomTrendingMovie: Title?
+    
+    private var headerView: HeroHeaderUIView?
+    
     private let sectionTtitles: [String] = [
         "Trending Movies",
         "Trending TVs",
@@ -53,8 +57,9 @@ class HomeViewController: UIViewController {
         homeFeedTable.dataSource = self
         
         configureNavbar()
+        configureHeroHeaderView()
         
-        let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
         homeFeedTable.tableHeaderView = headerView
     }
     
@@ -69,6 +74,22 @@ class HomeViewController: UIViewController {
         ]
         
         navigationController?.navigationBar.tintColor = .white
+    }
+    
+    func configureHeroHeaderView() {
+        APICaller.shared.getTrendingMovies() {[weak self] result in
+            switch result {
+            case .success(let titles):
+                guard let title: Title = titles.randomElement() else {return}
+                
+                guard let titleName = title.original_title ?? title.original_name else {return}
+                guard let posterUrl = title.poster_path else {return}
+
+                self?.headerView?.configure(with: TitleViewModel(titleName: titleName, posterURL: posterUrl))
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -174,6 +195,8 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        
         let defaultOffset = view.safeAreaInsets.top
         let offset = scrollView.contentOffset.y + defaultOffset
         

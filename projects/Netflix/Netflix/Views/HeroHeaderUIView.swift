@@ -20,7 +20,7 @@ class HeroHeaderUIView: UIView {
         
         return button
     }()
-
+    
     private let downloadButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -42,16 +42,16 @@ class HeroHeaderUIView: UIView {
         
         return imageView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(heroImageView)
         addGradient()
-
+        
         addSubview(playButton)
         addSubview(downloadButton)
-
+        
         applyConstraints()
     }
     
@@ -63,6 +63,12 @@ class HeroHeaderUIView: UIView {
         super.layoutSubviews()
         
         heroImageView.frame = bounds
+    }
+    
+    func configure(with model: TitleViewModel) {
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500\(model.posterURL)") else {return}
+        
+        heroImageView.sd_setImage(with: url, completed: nil)
     }
     
     private func applyConstraints() {
