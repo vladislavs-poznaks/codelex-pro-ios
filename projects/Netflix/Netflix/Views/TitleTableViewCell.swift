@@ -62,9 +62,7 @@ class TitleTableViewCell: UITableViewCell {
             titlePosterUIImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             
             titlePosterUIImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-//            titlePosterUIImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             titlePosterUIImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-//            titlePosterUIImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
             titlePosterUIImageView.widthAnchor.constraint(equalToConstant: 100)
         ]
