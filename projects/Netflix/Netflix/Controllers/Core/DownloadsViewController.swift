@@ -47,6 +47,10 @@ class DownloadsViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         
         fetchData()
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("downloaded"), object: nil, queue: nil) { _ in
+            self.fetchData()
+        }
     }
     
     private func fetchData() {
@@ -123,7 +127,6 @@ extension DownloadsViewController: UITableViewDataSource {
             DataPersistanceManager.shared.deleteTitleWith(title: titles[indexPath.row]) {[weak self] result in
                 switch result {
                 case .success():
-                    print("Successfully deleted")
                     self?.titles.remove(at: indexPath.row)
                     tableView.reloadData()
                 case .failure(let error):
